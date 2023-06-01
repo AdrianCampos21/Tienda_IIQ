@@ -10,10 +10,25 @@
 
 .enfasis{
     background-color: buttonshadow;
+    color: red;
     
 }
 
 a{
-    color:red;
+    color:brown;
 }
 
+h1, p{
+   /*Propiedades*/ 
+}  
+a:hover{
+    background: green;
+    color: white;   
+}
+a:active{
+    background: red;
+    color: black;   
+}
+a:visited{
+    font-size: 20px; 
+}
