@@ -4,11 +4,10 @@
  */
 package com.Tienda_IIQ.dao;
 
-import com.Tienda_IIQ.domain.Categoria;
-import java.util.List;
+import com.Tienda_IIQ.domain.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategoriaDao extends JpaRepository<Categoria, Long>{
+public interface ProductoDao extends JpaRepository<Producto, Long>{
     //Mas adelante se va a crear metodos ampliados
-      
+    
 }

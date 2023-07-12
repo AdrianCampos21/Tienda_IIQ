@@ -4,26 +4,26 @@
  */
 package com.Tienda_IIQ.service;
 
-import com.Tienda_IIQ.domain.Categoria;
+import com.Tienda_IIQ.domain.Producto;
 import java.util.List;
 
 /**
  *
  * @author EIVOR
  */
-public interface CategoriaService {
+public interface ProductoService {
     
     //Metodo para consultar las categorias. El parametro define si se muestran solo las activas o todas
     
-    public List<Categoria> getCategorias(boolean activos);
+    public List<Producto> getProductos(boolean activos);
     //Se obtiene una categoria por subid
-    public Categoria getCategoria(Categoria categoria);
+    public Producto getProducto(Producto Producto);
     
     //Insertar: se inserta cuando el idCategoria esta vacio(valor 0 o null)
     //Modificar: se modifica cuan el idCategoria no esta vacio
-    public void save(Categoria categoria);
+    public void save(Producto producto);
     
     //Se elimina un registro por su idCategoria
-    public void delete(Categoria categoria);
-   
+    public void delete(Producto producto);
+    
 }
