@@ -13,22 +13,23 @@ import org.springframework.transaction.annotation.Transactional;
 import com.Tienda_IIQ.dao.ProductoDao;
 
 @Service
-public class ProductoServiceImpl implements ProductoService{
-    
+public class ProductoServiceImpl implements ProductoService {
+
     @Autowired
     ProductoDao productoDao;
 
     @Override
     @Transactional(readOnly = true)
     public List<Producto> getProductos(boolean activos) {
-        List<Producto> categorias=productoDao.findAll();
-        
-        if(activos){
-           categorias.removeIf(x -> !x.isActivo());
+        List<Producto> categorias = productoDao.findAll();
+
+        if (activos) {
+            categorias.removeIf(x -> !x.isActivo());
         }
-        
+
         return categorias;
     }
+
     @Override
     @Transactional(readOnly = true)
     public Producto getProducto(Producto producto) {
@@ -45,5 +46,23 @@ public class ProductoServiceImpl implements ProductoService{
     @Transactional
     public void delete(Producto producto) {
         productoDao.delete(producto);
-    }  
+    }
+
+    // Lista de productos con precio entre ordendados por descripción ConsultaAmpliada
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+    @Override
+    @Transactional(readOnly=true)    
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+    
+    @Override
+    @Transactional(readOnly=true)    
+    public List<Producto> metodoNativo(double precioInf, double precioSup) {
+        return productoDao.metodoNativo(precioInf, precioSup);
+    }
 }

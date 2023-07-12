@@ -10,5 +10,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategoriaDao extends JpaRepository<Categoria, Long>{
     //Mas adelante se va a crear metodos ampliados
-    public List<Categoria> getPorDescripcion(String descripcion);  
+    public List<Categoria> findByDescripcion(String descripcion);  
 }
